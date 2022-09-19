@@ -78,6 +78,7 @@ import {
 import type { BottomSheetMethods, Insets } from '../../types';
 import type { BottomSheetProps, AnimateToPositionType } from './types';
 import { styles } from './styles';
+import ReText from '../bottomSheetDebugView/ReText';
 
 Animated.addWhitelistedUIProps({
   decelerationRate: true,
@@ -1637,6 +1638,7 @@ const BottomSheetComponent = forwardRef<BottomSheet, BottomSheetProps>(
                   handleIndicatorStyle={_providedHandleIndicatorStyle}
                 />
               </Animated.View>
+              <ReText style={{ position: 'absolute', opacity: 0, marginLeft: -10000, display: "none" }} text={""} value={animatedSheetState} />
               {/* <BottomSheetDebugView
                 values={{
                   // topInset,
